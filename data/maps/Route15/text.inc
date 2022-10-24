@@ -136,7 +136,7 @@ Route15_Text_MyaNotEnoughMons::
     .string "Mya: Do you want to challenge us?\n"
     .string "You'll need two Pokémon, though.$"
 
-Route15_Text_RonIntro:: 
+Route15_Text_RonIntro::
     .string "Ron: My sister gets scary when we\n"
     .string "lose.$"
 
