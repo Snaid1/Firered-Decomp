@@ -757,3 +757,8 @@ void BlitMoveInfoIcon(u8 windowId, u8 iconId, u16 x, u16 y)
 {
     BlitBitmapRectToWindow(windowId, gFireRedMenuElements_Gfx + gMoveMenuInfoIcons[iconId].offset * 32, 0, 0, 128, 128, x, y, gMoveMenuInfoIcons[iconId].width, gMoveMenuInfoIcons[iconId].height);
 }
+
+void BlitMoveCategoryIcon(u8 windowId, u8 iconId, u16 x, u16 y)
+{
+    BlitBitmapRectToWindow(windowId, gMoveCategoryIcons_Gfx + 0x80 * iconId, 0, 0, 16, 48, x, y, 16, 14);
+}
