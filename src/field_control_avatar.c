@@ -3,6 +3,7 @@
 #include "bike.h"
 #include "coord_event_weather.h"
 #include "daycare.h"
+#include "debug.h"
 #include "event_data.h"
 #include "event_object_movement.h"
 #include "event_scripts.h"
@@ -153,6 +154,14 @@ void FieldGetPlayerInput(struct FieldInput *input, u16 newKeys, u16 heldKeys)
         else if (heldKeys & DPAD_RIGHT)
             input->dpadDirection = DIR_EAST;
     }
+    
+#if TX_DEBUG_SYSTEM_ENABLE == TRUE && TX_DEBUG_SYSTEM_IN_MENU == FALSE
+    if ((heldKeys & TX_DEBUG_SYSTEM_HELD_KEYS) && input->TX_DEBUG_SYSTEM_TRIGGER_EVENT)
+    {
+        input->input_field_1_2 = TRUE;
+        input->TX_DEBUG_SYSTEM_TRIGGER_EVENT = FALSE;
+    }
+#endif
 }
 
 static void QuestLogOverrideJoyVars(struct FieldInput *input, u16 *newKeys, u16 *heldKeys)
@@ -294,7 +303,15 @@ int ProcessPlayerFieldInput(struct FieldInput *input)
         gInputToStoreInQuestLogMaybe.pressedSelectButton = TRUE;
         return TRUE;
     }
-
+#if TX_DEBUG_SYSTEM_ENABLE == TRUE && TX_DEBUG_SYSTEM_IN_MENU == FALSE
+    if (input->input_field_1_2)
+    {
+        PlaySE(SE_WIN_OPEN);
+        FreezeObjectEvents();
+        Debug_ShowMainMenu();
+        return TRUE;
+    }
+#endif
     return FALSE;
 }
 
@@ -734,6 +751,10 @@ static bool8 UpdatePoisonStepCounter(void)
 
 void RestartWildEncounterImmunitySteps(void)
 {
+    #if TX_DEBUG_SYSTEM_ENABLE == TRUE
+    if (FlagGet(FLAG_SYS_NO_ENCOUNTER))
+        return;
+    #endif
     ResetEncounterRateModifiers();
 }
 

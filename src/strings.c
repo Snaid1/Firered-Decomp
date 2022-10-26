@@ -164,6 +164,7 @@ const u8 gText_MenuSave[] = _("Save");
 const u8 gText_MenuOption[] = _("Option");
 const u8 gText_MenuExit[] = _("Exit");
 const u8 gText_MenuRetire[] = _("Retire");
+const u8 gText_MenuDebug[] = _("Debug");
 const u8 gText_MenuSafariStats[] = _("{STR_VAR_1}/{STR_VAR_2}\nBalls  {STR_VAR_3}");
 const u8 gText_TimesStrVar1[] = _("×{STR_VAR_1}");
 const u8 gText_Berry[] = _(" Berry");
@@ -904,6 +905,7 @@ const u8 gStartMenuDesc_Save[] = _("Save your game with a complete record\nof yo
 const u8 gStartMenuDesc_Option[] = _("Adjust various game settings such as text\nspeed, game rules, etc.");
 const u8 gStartMenuDesc_Exit[] = _("Close this Menu window.");
 const u8 gStartMenuDesc_Retire[] = _("Retire from the Safari Game and return to\nthe registration counter.");
+const u8 gStartMenuDesc_Debug[] = _("Debug menu - Have fun you cheater!");
 
 #include "data/text/quest_log.h"
 

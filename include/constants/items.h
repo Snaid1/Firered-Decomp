@@ -14,6 +14,12 @@
 #define ITEM_TIMER_BALL 10
 #define ITEM_LUXURY_BALL 11
 #define ITEM_PREMIER_BALL 12
+// Note: If moving ball IDs around, updating FIRST_BALL/LAST_BALL is not sufficient
+//       Several places expect the ball IDs to be first and contiguous (e.g. gBattlescriptsForBallThrow and MON_DATA_POKEBALL)
+//       If adding new balls, it's easiest to insert them after the last ball and increment the below IDs (and removing ITEM_034 for example)
+#define FIRST_BALL ITEM_MASTER_BALL
+#define LAST_BALL  ITEM_PREMIER_BALL
+
 #define ITEM_POTION 13
 #define ITEM_ANTIDOTE 14
 #define ITEM_BURN_HEAL 15
@@ -455,5 +461,7 @@
 
 // Check if the item is one that can be used on a Pokemon.
 #define IS_POKEMON_ITEM(item) ((item) >= ITEM_POTION && (item) <= ITEM_0B2)
+
+#define MAX_ITEM_CAPACITY 999
 
 #endif  // GUARD_CONSTANTS_ITEMS_H

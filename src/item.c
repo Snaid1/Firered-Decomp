@@ -181,7 +181,7 @@ bool8 CheckBagHasSpace(u16 itemId, u16 count)
             u16 quantity;
             // Does this stack have room for more??
             quantity = GetBagItemQuantity(&gBagPockets[pocket].itemSlots[i].quantity);
-            if (quantity + count <= 999)
+            if (quantity + count <= MAX_ITEM_CAPACITY)
                 return TRUE;
             // RS and Emerald check whether there is enough of the
             // item across all stacks.
@@ -215,7 +215,7 @@ bool8 AddBagItem(u16 itemId, u16 count)
             u16 quantity;
             // Does this stack have room for more??
             quantity = GetBagItemQuantity(&gBagPockets[pocket].itemSlots[i].quantity);
-            if (quantity + count <= 999)
+            if (quantity + count <= MAX_ITEM_CAPACITY)
             {
                 quantity += count;
                 SetBagItemQuantity(&gBagPockets[pocket].itemSlots[i].quantity, quantity);
@@ -369,7 +369,7 @@ bool8 CheckPCHasItem(u16 itemId, u16 count)
     u8 i;
     u16 quantity;
 
-    for (i = 0; i < PC_ITEMS_COUNT; i++)
+    for(i = 0; i < PC_ITEMS_COUNT; i++)
     {
         if (gSaveBlock1Ptr->pcItems[i].itemId == itemId)
         {
@@ -393,7 +393,7 @@ bool8 AddPCItem(u16 itemId, u16 count)
         if (gSaveBlock1Ptr->pcItems[i].itemId == itemId)
         {
             quantity = GetPcItemQuantity(&gSaveBlock1Ptr->pcItems[i].quantity);
-            if (quantity + count <= 999)
+            if (quantity + count <= MAX_ITEM_CAPACITY)
             {
                 quantity += count;
                 SetPcItemQuantity(&gSaveBlock1Ptr->pcItems[i].quantity, quantity);
