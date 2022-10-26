@@ -1281,7 +1281,7 @@ const u8 gText_WhatWillOldManDo[] = _("What will the\nold man do?");
 const u8 gText_LinkStandby[] = _("{PAUSE 16}Link standby…");
 const u8 gText_BattleMenu[] = _("{PALETTE 5}{COLOR_HIGHLIGHT_SHADOW 13 14 15}Fight{CLEAR_TO 56}Bag\nPokémon{CLEAR_TO 56}Run");
 const u8 gText_SafariZoneMenu[] = _("{PALETTE 5}{COLOR_HIGHLIGHT_SHADOW 13 14 15}Ball{CLEAR_TO 56}Bait\nRock{CLEAR_TO 56}Run");
-const u8 gText_MoveInterfacePP[] = _("PP ");
+const u8 gText_MoveInterfacePP[] = _("PP");
 const u8 gText_MoveInterfaceType[] = _("Type/");
 const u8 gText_MoveInterfaceDynamicColors[] = _("{PALETTE 5}{COLOR_HIGHLIGHT_SHADOW 13 14 15}");
 const u8 gText_WhichMoveToForget_Unused[] = _("{PALETTE 5}{COLOR_HIGHLIGHT_SHADOW 13 14 15}どの わざを\nわすれさせたい?");
@@ -1349,6 +1349,7 @@ const u8 gText_APsychicMove[] = _("a Psychic move");
 const u8 gText_AnIceMove[] = _("an Ice move");
 const u8 gText_ADragonMove[] = _("a Dragon move");
 const u8 gText_ADarkMove[] = _("a Dark move");
+const u8 gText_AFairyMove[] = _("a Fairy move");
 const u8 gText_TimeBoard[] = _("Time Board");
 const u8 gText_ClearTime[] = _("Clear Time"); // Unused
 const u8 gText_XMinYZSec[] = _("{STR_VAR_1}Min. {STR_VAR_2}.{STR_VAR_3}Sec.");
@@ -1392,7 +1393,8 @@ static const u8 *const sATypeMove_Table[NUMBER_OF_MON_TYPES] =
     [TYPE_PSYCHIC]  = gText_APsychicMove,
     [TYPE_ICE]      = gText_AnIceMove,
     [TYPE_DRAGON]   = gText_ADragonMove,
-    [TYPE_DARK]     = gText_ADarkMove
+    [TYPE_DARK]     = gText_ADarkMove,
+    [TYPE_FAIRY]    = gText_AFairyMove
 };
 
 static const u16 sGrammarMoveUsedTable[] =
