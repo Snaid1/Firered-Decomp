@@ -777,26 +777,26 @@ static void BuyMenuDrawMapMetatile(s16 x, s16 y, const u16 *src, u8 metatileLaye
 
     if (metatileLayerType == 0)
     {
-        BuyMenuDrawMapMetatileLayer(*gShopTilemapBuffer2, offset1, offset2, src + 0);
-        BuyMenuDrawMapMetatileLayer(*gShopTilemapBuffer3, offset1, offset2, src + 4);
-        BuyMenuDrawMapMetatileLayer(*gShopTilemapBuffer1, offset1, offset2, src + 8);
+        BuyMenuDrawMapMetatileLayer(sShopData->tilemapBuffers[2], offset1, offset2, src + 0);
+        BuyMenuDrawMapMetatileLayer(sShopData->tilemapBuffers[3], offset1, offset2, src + 4);
+        BuyMenuDrawMapMetatileLayer(sShopData->tilemapBuffers[1], offset1, offset2, src + 8);
     }
     else
     {
         if (IsMetatileLayerEmpty(src))
         {
-            BuyMenuDrawMapMetatileLayer(*gShopTilemapBuffer3, offset1, offset2, src + 4);
-            BuyMenuDrawMapMetatileLayer(*gShopTilemapBuffer4, offset1, offset2, src + 8);
+            BuyMenuDrawMapMetatileLayer(sShopData->tilemapBuffers[2], offset1, offset2, src + 4);
+            BuyMenuDrawMapMetatileLayer(sShopData->tilemapBuffers[3], offset1, offset2, src + 8);
         }
         else if (IsMetatileLayerEmpty(src + 4))
         {
-            BuyMenuDrawMapMetatileLayer(*gShopTilemapBuffer3, offset1, offset2, src);
-            BuyMenuDrawMapMetatileLayer(*gShopTilemapBuffer4, offset1, offset2, src + 8);
+            BuyMenuDrawMapMetatileLayer(sShopData->tilemapBuffers[2], offset1, offset2, src);
+            BuyMenuDrawMapMetatileLayer(sShopData->tilemapBuffers[3], offset1, offset2, src + 8);
         }
         else if (IsMetatileLayerEmpty(src + 8))
         {
-            BuyMenuDrawMapMetatileLayer(*gShopTilemapBuffer3, offset1, offset2, src);
-            BuyMenuDrawMapMetatileLayer(*gShopTilemapBuffer4, offset1, offset2, src + 4);
+            BuyMenuDrawMapMetatileLayer(sShopData->tilemapBuffers[2], offset1, offset2, src);
+            BuyMenuDrawMapMetatileLayer(sShopData->tilemapBuffers[3], offset1, offset2, src + 4);
         }
     }
 }
