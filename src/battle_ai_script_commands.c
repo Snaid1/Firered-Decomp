@@ -329,6 +329,13 @@ void BattleAI_SetupAIData(void)
 
     // Choose proper trainer ai scripts.
     // Fire Red, why all the returns?!?
+#if TX_DEBUG_SYSTEM_ENABLE == TRUE
+    if (gIsDebugBattle)
+    {
+        AI_THINKING_STRUCT->aiFlags = gDebugAIFlags;
+        return;
+    }
+#endif
     if (gBattleTypeFlags & BATTLE_TYPE_SAFARI)
     {
         AI_THINKING_STRUCT->aiFlags = AI_SCRIPT_SAFARI;
