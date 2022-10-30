@@ -1236,7 +1236,7 @@ BattleScript_EffectPainSplit::
 	attackcanceler
 	attackstring
 	ppreduce
-	accuracycheck BattleScript_ButItFailed, NO_ACC_CALC_CHECK_LOCK_ON
+	#accuracycheck BattleScript_ButItFailed, NO_ACC_CALC_CHECK_LOCK_ON
 	painsplitdmgcalc BattleScript_ButItFailed
 	attackanimation
 	waitanimation
@@ -1284,7 +1284,7 @@ BattleScript_EffectLockOn::
 	attackstring
 	ppreduce
 	jumpifstatus2 BS_TARGET, STATUS2_SUBSTITUTE, BattleScript_ButItFailed
-	accuracycheck BattleScript_ButItFailed, ACC_CURR_MOVE
+	#accuracycheck BattleScript_ButItFailed, ACC_CURR_MOVE
 	setalwayshitflag
 	attackanimation
 	waitanimation
@@ -1550,7 +1550,7 @@ BattleScript_EffectSpikes::
 
 BattleScript_EffectForesight::
 	attackcanceler
-	accuracycheck BattleScript_PrintMoveMissed, ACC_CURR_MOVE
+	#faccuracycheck BattleScript_PrintMoveMissed, ACC_CURR_MOVE
 	attackstring
 	ppreduce
 	setforesight
