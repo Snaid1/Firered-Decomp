@@ -418,7 +418,7 @@ void TrySetUpQuestLogScenes_ElseContinueFromSave(u8 taskId)
     u8 i;
 
     QL_EnableRecordingSteps();
-    sNumScenes = 0;
+    /*sNumScenes = 0;
     for (i = 0; i < QUEST_LOG_SCENE_COUNT; i++)
     {
         if (gSaveBlock1Ptr->questLog[i].startType != 0)
@@ -432,10 +432,10 @@ void TrySetUpQuestLogScenes_ElseContinueFromSave(u8 taskId)
         DestroyTask(taskId);
     }
     else
-    {
+    {*/
         SetMainCallback2(CB2_ContinueSavedGame);
         DestroyTask(taskId);
-    }
+    //}
 }
 
 static void Task_BeginQuestLogPlayback(u8 taskId)
